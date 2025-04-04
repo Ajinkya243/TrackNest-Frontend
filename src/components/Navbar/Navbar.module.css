@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333333;
+    background-color:rgb(240, 240, 240);
+}
+.navbar>*{
+    color: #222222
+}
+.faUser:hover{
+    color: rgb(116, 192, 252);
+    cursor: pointer;
+}
+
