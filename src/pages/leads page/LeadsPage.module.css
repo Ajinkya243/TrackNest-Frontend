@@ -1,0 +1,71 @@
+.leads-page{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+.header button{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.header button:hover{
+    background-color: rgb(70, 70, 255);
+    cursor: pointer;
+}
+.filters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.select-filters{
+    display: flex;
+    gap: 10px;
+}
+.filters input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.select-filters select{
+    padding: 5px;
+    border-radius: 5px;
+}
+.grid-title{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+.grid-details{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    padding: 10px;
+}
+.details{
+    background-color: white;
+}
+.grid-details>*{
+    align-self: center;
+}
+.details-link{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+.details-link:hover{
+    background-color: lightgreen;
+}
