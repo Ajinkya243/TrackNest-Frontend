@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/sidebar/Sidebar';
+import { useDispatch } from 'react-redux';
+import { fetchLeads, pipelineLeads } from './utils/redux/slice/leadsSlice';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(fetchLeads());
+    dispatch(pipelineLeads());
+  })
+  return(
+    <>
+    <Navbar/>
+    <Sidebar/>
+    <Dashboard/>
+    </>
+  )
 }
 
 export default App;
