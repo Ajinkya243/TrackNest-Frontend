@@ -1,0 +1,74 @@
+.login-page{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+}
+.login-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-page button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(55, 55, 237);
+    color: white;
+    cursor: pointer;
+}
+.login-page button:hover{
+    background-color: green;
+}
+.agent-login {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.agent-login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-login label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.agent-login input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.agent-login button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.agent-login button:hover {
+    background-color: #0056b3;
+}
+
+.agent-login button:last-child {
+    background-color: #28a745;
+}
+
+.agent-login button:last-child:hover {
+    background-color: #218838;
+}
