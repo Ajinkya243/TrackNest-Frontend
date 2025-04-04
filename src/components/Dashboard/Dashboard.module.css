@@ -1,0 +1,151 @@
+.dashboard{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 0;
+}
+.dashboard>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+.sales-btn{
+    background-color: rgb(50, 164, 230);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.sales-btn:hover{
+    cursor: pointer;
+    background-color: rgb(33, 210, 33);
+}
+.dashboard-tabs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.dashboard-tabs>*{
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.dashboard div:last-child{
+    grid-column: span 3;
+}
+.tabs{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.tabs>*{
+    border: 1px solid black;
+    border-radius: 5px;
+    flex-grow: 1;
+    text-align: center;
+}
+.reports:hover{
+    background-color: #333333;
+    color: white;
+}
+.status{
+    box-sizing: border-box;
+}
+.type:hover{
+    background-color:  rgb(50, 164, 230);
+    color: white;
+}
+.quick-actions{
+    background-color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.action-tab{
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+}
+.action-tab>*{
+    flex-grow: 1;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #333333;
+}
+.action-tab>*:hover{
+    background-color: rgb(33, 210, 33);
+    color: white;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.filters{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.filters-btn{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    align-items: center;
+
+}
+.btns{
+    display: flex;
+    gap: 15px;
+}
+.btns>*{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.high-btn:hover:not(.active-High){
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+   
+}
+.medium-btn:hover:not(.active-Medium){
+    background-color: rgb(50, 164, 230);
+    color: white;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.low-btn:hover:not(.active-Low){
+    background-color: rgb(33, 210, 33);
+    color: white;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.active-High{
+    background-color: red;
+    color: white;
+    transform: scale(1.2);
+}
+.active-Medium{
+    background-color: rgb(50, 164, 230);
+    color: white;
+    transform: scale(1.2);
+}
+.active-Low{
+    background-color: rgb(33, 210, 33);
+    color: white;
+    transform: scale(1.2);
+}
