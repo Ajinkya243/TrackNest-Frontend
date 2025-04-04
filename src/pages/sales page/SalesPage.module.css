@@ -1,0 +1,58 @@
+.sales-page{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+}
+.sales-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+.sales-header button{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.sales-header button:hover{
+    cursor: pointer;
+    background-color: rgb(21, 152, 234);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.header>*{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.sales-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.sales-link{
+    text-decoration: none;
+    color: #333333;
+    transition: transform 0.3s ease-in-out;
+}
+.sales-grid>*{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.sales-grid h3{
+    color: blue;
+}
+.sales-grid span{
+    color: green;
+}
+.sales-link:hover{
+    background-color: lightgray;
+    transform: scale(1.05);
+}
