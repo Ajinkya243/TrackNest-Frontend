@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
-import { postComment } from "../../utils/redux/slice/commentsSlice";
+import { getCommentById, postComment } from "../../utils/redux/slice/commentsSlice";
 
 const LeadsDetails=()=>{
     const{id}=useParams();
@@ -29,6 +29,7 @@ const LeadsDetails=()=>{
     
     useEffect(()=>{
         dispatch(getLeadById(id));
+        dispatch(getCommentById(id));
     },[])
     return(
         <div>
@@ -58,7 +59,7 @@ const LeadsDetails=()=>{
                     <div className={classes.comments}>
                         <FontAwesomeIcon icon={faCircleUser} size="2xl" style={{color: "#74C0FC",}} />
                         <div>
-                        <small>{el.author.name} {el.createdAt}</small>
+                        <small>{el.author.name} {new Date(el.createdAt).toLocaleString('en-US')}</small>
                         <p>{el.commentText}</p>
                         </div>
                     </div>
