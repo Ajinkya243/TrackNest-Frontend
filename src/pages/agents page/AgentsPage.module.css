@@ -1,0 +1,57 @@
+.agents-page{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+.header button{
+    background-color: rgb(12, 184, 242);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+.header button:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+.input input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.title-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+.grid{
+    background-color: white;
+}
+.details-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 10px;
+}
+.details-link{
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    width: fit-content;
+    align-self: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.details-link:hover{
+    background-color:lightblue
+}
+
+
