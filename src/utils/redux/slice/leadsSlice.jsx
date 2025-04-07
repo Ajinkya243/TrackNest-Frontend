@@ -2,17 +2,23 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from 'axios'
 export const fetchLeads=createAsyncThunk('fetch/leads',async()=>{
     const response=await axios.get("https://track-nest-backend.vercel.app/leads");
-    console.log(response);
     return response.data;
 })
 
 export const pipelineLeads=createAsyncThunk('pipeline/leads',async()=>{
     const response=await axios.get("https://track-nest-backend.vercel.app/report/pipeline");
-    console.log(response);
     return response.data;
 })
 export const getLeadById=createAsyncThunk('leads/id',async(id)=>{
     const response=await axios.get(`https://track-nest-backend.vercel.app/leads/${id}`);
+    return response.data;
+})
+export const addLead=createAsyncThunk('post/lead',async(lead)=>{
+    const response=await axios.post(`https://track-nest-backend.vercel.app/leads`,lead);
+    return response.data;
+})
+export const updateLead=createAsyncThunk('update/lead',async({id,lead})=>{
+    const response=await axios.post(`https://track-nest-backend.vercel.app/leads/${id}`,lead);
     return response.data;
 })
 export const leadsSlice=createSlice({

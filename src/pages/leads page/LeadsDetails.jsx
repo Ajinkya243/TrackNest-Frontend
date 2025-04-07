@@ -4,7 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import classes from './LeadsDetails.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { getLeadById } from "../../utils/redux/slice/leadsSlice";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -17,14 +17,13 @@ const LeadsDetails=()=>{
     const{comments}=useSelector(state=>state.comments);
     const{currentAgent}=useSelector(state=>state.agents);
     const[text,setText]=useState("");
-    console.log(lead,currentAgent);
     const filteredComments=comments.filter(el=>el.lead===id);
     const clearText=()=>{
-        setText("")
+        setText("");
     }
     const handlePostComment=()=>{
         dispatch(postComment({lead:id,author:currentAgent.id,commentText:text}));
-        setText("")
+        setText("");
     }
     
     useEffect(()=>{
@@ -45,10 +44,14 @@ const LeadsDetails=()=>{
             {lead._id && status!=='pending' && <div className={classes.details}>
                 <p><strong>Name:</strong> {lead.name}</p>
                 <p><strong>Source:</strong> {lead.source}</p>
+                <p><strong>Budget:</strong>{lead.budget}</p>
                 <p><strong>Status:</strong> {lead.status}</p>
                 <p><strong>Priority:</strong> {lead.priority}</p>
                 <p><strong>Sales Agent:</strong> {lead.salesAgent.name}</p>
                 <p><strong>Agent Contact Details:</strong> {lead.salesAgent.email}</p>
+                <Link to="/leads/form" state={{lead}} className={classes.editBtn}>Edit Details</Link>
+                <br />
+                <br />
                 <p><strong>Comments:</strong></p>
                 <input type="text" placeholder="Enter your comment" value={text} className={classes.input} onChange={event=>setText(event.target.value)}/>
                 {text && <div className={classes.btns}>

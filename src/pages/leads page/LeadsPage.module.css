@@ -21,6 +21,9 @@
     background-color: rgb(70, 70, 255);
     cursor: pointer;
 }
+.header button:active{
+    transform: scale(0.9);
+}
 .filters{
     display: flex;
     justify-content: space-between;

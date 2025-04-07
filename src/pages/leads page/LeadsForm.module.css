@@ -1,0 +1,66 @@
+.form{
+    margin-top: 90px;
+    margin-left: 270px;
+    margin-right: 10px;
+}
+.form h2:first-child{
+    border-bottom: 1px solid #333333;
+}
+.leads-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.leads-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.leads-form input,
+.leads-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.leads-form select {
+    cursor: pointer;
+}
+
+.leads-form button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.leads-form button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .leads-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .leads-form button {
+        font-size: 14px;
+    }
+}
