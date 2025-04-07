@@ -7,8 +7,10 @@ import { useGlobalState } from '../../utils/context/GlobalStateProvider';
 import { useNavigate, Link } from 'react-router-dom';
 const Dashboard=()=>{
     const {leads,pipeline}=useSelector(state=>state.leads);
+    const{agents}=useSelector(state=>state.agents);
     const closedLead=leads.filter(el=>!pipeline.some(ele=>el._id===ele._id));
     const pipelineTotal=pipeline.reduce((acc,cur)=>acc+cur.budget,0);
+    const closedTotal=closedLead.reduce((acc,cur)=>acc+cur.budget,0);
     const newLeads=leads.filter(el=>el.status==='New');
     const contactedLeads=leads.filter(el=>el.status==='Contacted');
     const qualifiedLeads=leads.filter(el=>el.status==='Qualified');
@@ -38,8 +40,8 @@ const Dashboard=()=>{
         </div>
         <div className={classes.reports}>
             <h3>Deals Closed</h3>
-            <p><strong><FontAwesomeIcon icon={faIndianRupeeSign} beatFade size="lg" style={{color: "#63E6BE",}} /> {closedLead[0].budget}</strong></p>
-            <small>Active agents on active leads.</small>
+            <p><strong><FontAwesomeIcon icon={faIndianRupeeSign} beatFade size="lg" style={{color: "#63E6BE",}} /> {closedTotal}</strong></p>
+            <small>Active {agents.length} agents on active {leads.length} leads.</small>
         </div>
         <div className={classes.reports}>
         <h3>Pipeline Status</h3>
