@@ -6,6 +6,7 @@ import { registerAgent } from "../../utils/redux/slice/agentsSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 const AddAgent=()=>{
     const[name,setName]=useState("");
     const[email,setEmail]=useState("");
@@ -17,7 +18,6 @@ const AddAgent=()=>{
     const handleSubmit=async(event)=>{
         event.preventDefault();
         const response=await dispatch(registerAgent({name,email}));
-        console.log(response);
         if(response.payload.agent){
             toast.success('Agent register succesfully.');
             setTimeout(()=>{
@@ -40,10 +40,10 @@ const AddAgent=()=>{
                 <div className={classes['add-form']}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="inputName">Name:</label><br />
-                    <input type="text" id="inputName" onChange={event=>setName(event.target.value)} />
+                    <input type="text" id="inputName" onChange={event=>setName(event.target.value)} required/>
                     <br />
                     <label htmlFor="inputEmail">Email:</label><br />
-                    <input type="email" id="inputEmail" onChange={event=>setEmail(event.target.value)}/>
+                    <input type="email" id="inputEmail" onChange={event=>setEmail(event.target.value)} required/>
                     <br />
                     <button type="submit">Register</button>
                 </form>

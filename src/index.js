@@ -19,6 +19,7 @@ import Login from './pages/login page/Login';
 import Profile from './pages/profile page/Profile';
 import AgentDetails from './pages/agents page/AgentDetails';
 import LeadsDetails from './pages/leads page/LeadsDetails';
+import LeadsForm from './pages/leads page/LeadsForm';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -37,6 +38,7 @@ root.render(
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/agents/details" element={<AgentDetails/>} />
       <Route path="/leads/details/:id" element={<LeadsDetails/>} />
+      <Route path="/leads/form" element={<LeadsForm/>}/>
     </Routes>
     </GlobalStateProvider>
     </PersistGate>

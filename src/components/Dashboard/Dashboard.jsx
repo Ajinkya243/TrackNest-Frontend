@@ -66,11 +66,11 @@ const Dashboard=()=>{
             <p><strong>New Agent</strong></p>
             <p>Add new Agent</p>
             </Link>
-            <div>
+            <Link to="/leads/form">
             <FontAwesomeIcon icon={faUsers} size="xl" style={{color: "#74C0FC",}} />
             <p><strong>New Lead</strong></p>
             <p>Add new Prospect</p>
-            </div>
+            </Link>
         </div>
         </div>
         <div className={classes.filters}>

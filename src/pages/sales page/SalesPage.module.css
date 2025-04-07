@@ -20,6 +20,9 @@
     cursor: pointer;
     background-color: rgb(21, 152, 234);
 }
+.sales-header button:active{
+    transform: scale(0.9);
+}
 .header{
     display: flex;
     align-items: center;
