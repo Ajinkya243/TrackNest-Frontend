@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from './LeadsPage.module.css';
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import { useGlobalState } from "../../utils/context/GlobalStateProvider";
 import { Link, useNavigate } from "react-router-dom";
+import { fetchLeads } from "../../utils/redux/slice/leadsSlice";
 const LeadsPage=()=>{
     const{leads}=useSelector(state=>state.leads);
     const{setTab}=useGlobalState();
@@ -18,12 +19,17 @@ const LeadsPage=()=>{
         return 0;
     })
     const navigate=useNavigate();
+    const dispatch=useDispatch();
     
+    const navigateForm=()=>{
+        navigate("/leads/form")
+    }
     useEffect(()=>{
         setTab("leads");
         if(!currentAgent.name || !currentAgent.email){
             navigate("/login");
         }
+        dispatch(fetchLeads())
     },[])
     return(
         <div>
@@ -32,7 +38,7 @@ const LeadsPage=()=>{
             <div className={classes['leads-page']}>
             <div className={classes.header}>
                 <h2>Leads Overview ({leads.length})</h2>
-                <button>Add Lead</button>
+                <button onClick={navigateForm}>Add Lead</button>
             </div>
             <div className={classes.filters}>
                 <input type="text" placeholder="Search by lead" onChange={event=>setInputLead(event.target.value)}/>
