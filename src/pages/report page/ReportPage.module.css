@@ -20,6 +20,9 @@
     background-color: green;
     cursor: pointer;
 }
+.report-header button:active{
+    transform: scale(0.9);
+}
 .donught{
     width: 500px;
     background-color: white;

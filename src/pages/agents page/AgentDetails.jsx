@@ -56,7 +56,6 @@ const AgentDetails=()=>{
             <p><strong>Name:</strong>{agent.name}</p>
             <p><strong>Email:</strong>{agent.email}</p>
             <p><strong>Register Date:</strong>{formattedDate}</p>
-            {currentAgent.email===agent.email && <button>Edit Details</button>}
             </div>}
         <h2>Handling Leads</h2> 
         {handlingLeads.length>0 && status!=='pending' && <div className={classes['handling-leads']}>

@@ -34,13 +34,12 @@
 .add-form form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .add-form label {
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 5px;
 }
 
 .add-form input {

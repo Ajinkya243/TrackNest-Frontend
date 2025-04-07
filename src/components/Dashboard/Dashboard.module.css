@@ -22,6 +22,9 @@
     cursor: pointer;
     background-color: rgb(33, 210, 33);
 }
+.sales-btn:active{
+    transform: scale(0.9);
+}
 .dashboard-tabs{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
