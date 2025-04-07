@@ -15,7 +15,6 @@ export const loginAgent=createAsyncThunk('login/agent',async({name,email})=>{
 })
 export const getAgentDetails=createAsyncThunk('agent/details',async(id)=>{
     const response=await axios.get(`https://track-nest-backend.vercel.app/agents/${id}`);
-    console.log(response);
     return response.data;
 })
 
@@ -52,7 +51,6 @@ export const agentsSlice=createSlice({
         .addCase(getAgentDetails.fulfilled,(state,action)=>{
             state.status="fullfilled"
             state.agent=action.payload
-            console.log(state.agent)
         })
     }
 

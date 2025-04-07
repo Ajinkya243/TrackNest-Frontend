@@ -3,12 +3,11 @@ import axios from "axios";
 
 export const getCommentById=createAsyncThunk('comment/id',async(id)=>{
     const response=await axios(`https://track-nest-backend.vercel.app/leads/${id}/comments`);
-    console.log(response);
+    return response.data
 })
 export const postComment=createAsyncThunk('post/comment',async(obj)=>{
     const{lead,author,commentText}=obj;
     const response=await axios.post(`https://track-nest-backend.vercel.app/leads/${lead}/comments`,{author,commentText});
-    console.log(response);
     return response.data;
 })
 
