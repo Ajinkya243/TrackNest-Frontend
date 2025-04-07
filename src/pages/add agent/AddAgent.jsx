@@ -3,15 +3,15 @@ import Navbar from "../../components/Navbar/Navbar"
 import Sidebar from "../../components/sidebar/Sidebar"
 import classes from './AddAgent.module.css';
 import { registerAgent } from "../../utils/redux/slice/agentsSlice";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 const AddAgent=()=>{
     const[name,setName]=useState("");
     const[email,setEmail]=useState("");
     const navigate=useNavigate();
     const dispatch=useDispatch();
+    const{currentAgent}=useSelector(state=>state.agents);
     const navigateAgents=()=>{
         navigate("/agents")
     }
@@ -28,6 +28,11 @@ const AddAgent=()=>{
             toast.error("Email id is already register")
         }
     }
+    useEffect(()=>{
+        if(!currentAgent.name){
+            navigate("/login")
+        }
+    })
     return(
         <div>
             <Navbar/>

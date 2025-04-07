@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import classes from './LeadsForm.module.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLead, updateLead } from "../../utils/redux/slice/leadsSlice";
 import { toast } from "react-toastify";
@@ -10,7 +10,7 @@ const LeadsForm=()=>{
     const location=useLocation();
     const dispatch=useDispatch();
     const leadData=location.state?.lead||{};
-    const {agents}=useSelector(state=>state.agents);
+    const {agents,currentAgent}=useSelector(state=>state.agents);
     const[lead,setLead]=useState({
         name:leadData.name||"",
         priority:leadData.priority||"",
@@ -41,6 +41,11 @@ const LeadsForm=()=>{
         }
         
     }
+    useEffect(()=>{
+        if(!currentAgent.name){
+            navigate("/login")
+        }
+    })
     return(
         <div>
             <Navbar/>
