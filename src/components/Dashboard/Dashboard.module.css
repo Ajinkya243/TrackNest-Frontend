@@ -87,7 +87,7 @@
 .action-tab>*:hover{
     background-color: rgb(33, 210, 33);
     color: white;
-    transform: scale(1.1);
+    transform: scale(0.9);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
