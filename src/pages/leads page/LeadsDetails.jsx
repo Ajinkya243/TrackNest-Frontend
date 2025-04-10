@@ -4,7 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import classes from './LeadsDetails.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { getLeadById } from "../../utils/redux/slice/leadsSlice";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +13,7 @@ import { getCommentById, postComment } from "../../utils/redux/slice/commentsSli
 const LeadsDetails=()=>{
     const{id}=useParams();
     const dispatch=useDispatch();
+    const navigate=useNavigate();
     const{lead,status}=useSelector(state=>state.leads);
     const{comments}=useSelector(state=>state.comments);
     const{currentAgent}=useSelector(state=>state.agents);
@@ -24,6 +25,9 @@ const LeadsDetails=()=>{
     const handlePostComment=()=>{
         dispatch(postComment({lead:id,author:currentAgent.id,commentText:text}));
         setText("");
+    }
+    const navigateLeads=()=>{
+        navigate("/leads")
     }
     
     useEffect(()=>{
@@ -37,7 +41,7 @@ const LeadsDetails=()=>{
             <div className={classes['leads-details']}>
             <div className={classes['details-header']}>
             <h2>Leads Details</h2>
-            <button>Leads</button>
+            <button onClick={navigateLeads}>Leads</button>
             </div>
             <div className={classes['details-page']}>
                 {status==='pending' && <div className={classes.loader}><ClipLoader/></div>}
