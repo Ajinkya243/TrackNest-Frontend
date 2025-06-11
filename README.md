@@ -27,6 +27,7 @@ Backend Repository - https://github.com/Ajinkya243/TrackNest-Backend
 - Redux toolkit
 - Axios
 - CSS Modules
+- Chartjs
 
 ### Backend
 - Node.js
@@ -35,3 +36,17 @@ Backend Repository - https://github.com/Ajinkya243/TrackNest-Backend
 - REST API
 
 ---
+![image](https://github.com/user-attachments/assets/57cb855e-74a4-4859-96f8-63a9384d4ecb)
+
+![image](https://github.com/user-attachments/assets/760018fc-985e-49a6-bab3-f0901c365c33)
+
+![image](https://github.com/user-attachments/assets/3c6aa263-5422-4e8c-9d6f-580e05750db4)
+
+![image](https://github.com/user-attachments/assets/42c5c641-7c52-4c74-af5a-2e0d333e0553)
+
+![image](https://github.com/user-attachments/assets/d9a10856-7775-40c5-beff-2705b8f4de0b)
+
+
+
+
+
