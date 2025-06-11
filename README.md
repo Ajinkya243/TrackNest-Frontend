@@ -13,6 +13,7 @@ Backend Repository - https://github.com/Ajinkya243/TrackNest-Backend
 - ➕ Add new customer details
 - 📋 View and manage customer reports
 - 📝 Edit and update customer information
+- 📝 Add comments on task
 - ❌ Delete records when no longer needed
 - 🔍 Simple and clean UI for better usability
 
